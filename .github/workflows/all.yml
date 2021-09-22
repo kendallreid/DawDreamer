@@ -1,11 +1,11 @@
 name: Compile, Test, and Deploy
-on:
-  pull_request: {}
-  push:
-    branches:
-      - master
-  release:
-    types: [published]
+on: push
+  # pull_request: {}
+  # push:
+  #   branches:
+  #     - master
+  # release:
+  #   types: [published]
 jobs:
 
   build-ubuntu:
@@ -241,7 +241,7 @@ jobs:
         path: ./wheelhouse/*.whl
 
   build-macos:
-    runs-on: macos-11
+    runs-on: macos-latest
 
     strategy:
       matrix:
